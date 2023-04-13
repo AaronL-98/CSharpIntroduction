@@ -1,28 +1,36 @@
-﻿namespace CodeToTest
+﻿using System.Globalization;
+using System.Runtime.CompilerServices;
+
+namespace CodeToTest
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             int timeOfDay = 21;
-            NewMethod(timeOfDay);
+            var myGreeting = Greeting(timeOfDay);
+            Console.WriteLine(myGreeting);
+
         }
 
-        private static void NewMethod(int timeOfDay)
+        /*Funtion to display a greeting based on the time of day given to the funtion*/
+        public static string Greeting(int timeOfDay) 
         {
+            string greeting;
             if (timeOfDay >= 5 && timeOfDay < 12)
             {
-                Console.WriteLine("Good Morning");
+                greeting = "Good Morning";
             }
             else if (timeOfDay >= 12 && timeOfDay < 18)
             {
-                Console.WriteLine("Good Afternoon");
+                greeting = "Good Afternoon";
             }
             else
             {
-                Console.WriteLine("Good Evening");
+                greeting = "Good Evening";
             }
+            return greeting;
         }
-
+        
     }
 }
