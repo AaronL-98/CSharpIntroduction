@@ -6,53 +6,42 @@ namespace UnitTests
 {
     public class GreetingTests
     {
-        // Partition 1 
-        [Test]
-        public void GivenTimeOf21_Greeting_ReturnsGoodEvening()
+        // Partition 1 19 - 4
+        [TestCase(19)]
+        [TestCase(23)]
+        [TestCase(1)]
+        [TestCase(4)]
+        public void GivenTimeBetween19And4Inclusive_Greeting_ReturnsGoodEvening(int time)
         {
-            //Arrange   -- Inputs
-            var time = 21;
+            //Arrange   -- Intputs
             var expectedGreeting = "Good Evening";
             //Act       -- Actions
             var result = Program.Greeting(time);
             //Assert    -- Expected output
             Assert.That(result, Is.EqualTo(expectedGreeting));
-        }
-        [Test]
-        public void GivenTimeOf21_Greeting_ReturnsGoodEvening_Refactored()
-        {
 
-            // Refactoring of Above Test
-            Assert.That(Program.Greeting(21), Is.EqualTo("Good Evening"));
         }
-        // Partition 2 5 - 11:59
-        [Test]
-        public void GivenTimeOf8_Greeting_ReturnsGoodMorning()
+
+        // Partition 2 5 - 11
+        [TestCase(5)]
+        [TestCase(7)]
+        [TestCase(9)]
+        [TestCase(11)]
+        public void GivenTimeBetween5And11Inclusive_Greeting_ReturnsGoodMorning(int time)
         {
-            var time = 8;
-            var expectedGreeting = "Good Morning";
-            var result = Program.Greeting(time);
-            Assert.That(result, Is.EqualTo(expectedGreeting));
-        }
-        [Test]
-        public void GivenTimeOf9_Greeting_ReturnsGoodMorning()
-        {
-            var time = 9;
             var expectedGreeting = "Good Morning";
             var result = Program.Greeting(time);
             Assert.AreEqual(result, expectedGreeting);
         }
-        // Partition 3 12 - 18
-        [Test]
-        public void GivenTimeOf13_Greeting_ReturnsGoodAfternoon()
+
+        // Partition 3 12 - 17
+        [TestCase(12)]
+        [TestCase(15)]
+        [TestCase(17)]
+        public void GivenTimeBetween12And17Inclusive_Greeting_ReturnsGoodAfternoon(int time)
         {
-            Assert.That(Program.Greeting(13), Is.EqualTo("Good Afternoon"));
-        }
-        // Partition 4
-        [Test]
-        public void GivenTimeOf3_Greeting_ReturnsGoodAfternoon()
-        {
-            Assert.That(Program.Greeting(3), Is.EqualTo("Good Evening"));
+            // Refactored layout of above tests
+            Assert.That(Program.Greeting(time), Is.EqualTo("Good Afternoon"));
         }
     }
 }
