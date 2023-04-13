@@ -17,8 +17,6 @@ namespace UnitTests
             var result = Program.Greeting(time);
             //Assert    -- Expected output
             Assert.That(result, Is.EqualTo(expectedGreeting));
-            // Refactoring of Above
-            Assert.That(Program.Greeting(21), Is.EqualTo("Good Evening"));
         }
         [Test]
         public void GivenTimeOf21_Greeting_ReturnsGoodEvening_Refactored()
