@@ -23,7 +23,6 @@ namespace HelloWorld
                 Console.WriteLine("i: " + i + "x " + x);
                 x += i;
             }
-
         }
     }
 }
