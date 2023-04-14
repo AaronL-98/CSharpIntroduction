@@ -44,4 +44,35 @@ namespace UnitTests
             Assert.That(Program.Greeting(time), Is.EqualTo("Good Afternoon"));
         }
     }
+
+    public class ClassificationTests
+    {
+        // Partition 1 age < 12
+        [TestCase(11)] // Pass
+        [TestCase(12)] // Fail
+        public void GivenAgeLessThan12_AvailableClassification_ReturnsUPGFilmsAreAvailable(int age)
+        {
+            Assert.That(Program.AvailableClassifications(age), Is.EqualTo("U, PG Films are available."));
+        }
+        // Partition 2 age < 15
+        [TestCase(14)] // Pass
+        [TestCase(15)] // Fail
+        public void GivenAgeLessThan15_AvailableClassification_ReturnsUP12GFilmsAreAvailable(int age)
+        {
+            Assert.That(Program.AvailableClassifications(age), Is.EqualTo("U, PG & 12 Films are available."));
+        }
+        // Partition 3 age < 18
+        [TestCase(17)] // Pass
+        [TestCase(18)] // Fail
+        public void GivenAgeLessThan18_AvailableClassification_ReturnsUPG1215FilmsAreAvailable(int age)
+        {
+            Assert.That(Program.AvailableClassifications(age), Is.EqualTo("U, PG, 12 & 15 Films are available."));
+        }
+        // Partition 4 age > 18
+        [TestCase(18)] // Pass
+        public void GivenAgeGreaterThan18_AvailableClassification_ReturnsAllFilmsAreAvailable(int age)
+        {
+            Assert.That(Program.AvailableClassifications(age), Is.EqualTo("All Films are available."));
+        }
+    }
 }
