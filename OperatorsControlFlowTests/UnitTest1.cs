@@ -1,5 +1,3 @@
-
-
 namespace OperatorsControlFlowTests
 {
     public class Tests
