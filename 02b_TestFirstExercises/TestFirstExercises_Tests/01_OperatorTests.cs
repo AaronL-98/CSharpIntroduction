@@ -17,6 +17,10 @@ namespace TestFirstExercises_Tests
 
         [TestCase(0, 10.429)]
         [TestCase(10, 24.714)]
+        [TestCase("10", 24.714)] // Pass
+        [TestCase("0", 10.429)] // Pass
+        [TestCase(-5, 14.000)] // Pass
+        [TestCase(150, 3224.714)] // Pass
         public void GivenNumber_BODMAS_ReturnsTheExpectedResult(int num, double expResult)
         {
             Assert.That(Methods.BODMAS(num), Is.EqualTo(expResult));
@@ -26,6 +30,9 @@ namespace TestFirstExercises_Tests
         [TestCase(0)]
         [TestCase(2)]
         [TestCase(348)]
+        [TestCase("24")] // pass
+        [TestCase("2")] // Pass
+        [TestCase("2.0")] // Fail
         public void WhenTheArgumentIsEven_EvenOdd_ReturnsTrue(int x)
         {
             var result = Methods.EvenOdd(x);
@@ -36,6 +43,9 @@ namespace TestFirstExercises_Tests
         [TestCase(-1)]
         [TestCase(1)]
         [TestCase(347)]
+        [TestCase("23")] // pass
+        [TestCase("1")] // Pass
+        [TestCase("1.0")] // Fail
         public void WhenTheArgumentIsOdd_EvenOdd_ReturnsFalse(int x)
         {
             var result = Methods.EvenOdd(x);

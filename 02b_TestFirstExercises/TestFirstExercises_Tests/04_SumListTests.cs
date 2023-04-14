@@ -21,5 +21,12 @@ namespace TestFirstExercises_Tests
             var result = Methods.SumList(myList);
             Assert.That(result, Is.EqualTo(0));
         }
+
+        [Test]
+        public void GivenAnNullValue_SumList_ReturnNull()
+        {
+            var result = Methods.SumList(null);
+            Assert.That(result, Is.EqualTo(-1));
+        }
     }
 }

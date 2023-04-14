@@ -11,6 +11,10 @@ namespace TestFirstExercises_Tests
         [TestCase(9, 25)]
         [TestCase(10, 35)]
         [TestCase(22, 152 )]
+        [TestCase(-3, 0)]
+        [TestCase("22", 152)] // Pass
+        [TestCase("9", 25)] // Pass
+        [TestCase(0.0, 0)] //fail
         public void SumEvenFive_ReturnsExpectedResult(int n, int expectedSum)
         {
             var result = Methods.SumEvenFive(n);

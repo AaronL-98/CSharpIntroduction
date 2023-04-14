@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace TestFirstExercises
 {
@@ -17,18 +18,14 @@ namespace TestFirstExercises
         // Return a double rounded to 3 decimal places.
         public static double BODMAS(int inputNumber)
         {
-            double i = inputNumber;
+            double i = (double) inputNumber;
             return Math.Round((((i * i + 101) / 7) - 4), 3);
         }
 
         // implement this method so that it returns true if num is even, otherwise false
         public static bool EvenOdd(int num)
         {
-            if (num % 2 == 0)
-            {
-                return true;
-            }
-            return false;
+            return (num % 2 == 0);
         }
 
         // implement this method so that it returns 
@@ -58,12 +55,16 @@ namespace TestFirstExercises
         // of all the numbers in the list
         public static int SumList(List<int> list)
         {
-            int sum = 0;
-            foreach (int number in list)
-            {
-                sum += number;
-            }
-            return sum;
+            //int sum = 0;
+            //foreach (int number in list)
+            //{
+            //    sum += number;
+            //}
+            //return sum;
+
+            if (list == null) return -1; // if list is null return -1 but what if the value is -1
+            return list.Sum(); // Add all list items together and return the value
+
         }
     }
 }
