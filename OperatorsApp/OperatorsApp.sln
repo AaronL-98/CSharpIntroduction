@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorsApp", "OperatorsApp.csproj", "{5C38D9B0-407D-40AE-B112-9036C095DBB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperatorsApp", "OperatorsApp.csproj", "{5C38D9B0-407D-40AE-B112-9036C095DBB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorsControlFlowTests", "..\OperatorsControlFlowTests\OperatorsControlFlowTests.csproj", "{290D2B30-4EB9-4A32-B99C-E03FA9C4C8B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperatorsControlFlowTests", "..\OperatorsControlFlowTests\OperatorsControlFlowTests.csproj", "{290D2B30-4EB9-4A32-B99C-E03FA9C4C8B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlFlowApp", "..\ControlFlowApp\ControlFlowApp.csproj", "{127BB360-3FEC-45E9-985A-4F7C90C6E869}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{290D2B30-4EB9-4A32-B99C-E03FA9C4C8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{290D2B30-4EB9-4A32-B99C-E03FA9C4C8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{290D2B30-4EB9-4A32-B99C-E03FA9C4C8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{127BB360-3FEC-45E9-985A-4F7C90C6E869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127BB360-3FEC-45E9-985A-4F7C90C6E869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127BB360-3FEC-45E9-985A-4F7C90C6E869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127BB360-3FEC-45E9-985A-4F7C90C6E869}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
