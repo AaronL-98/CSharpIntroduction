@@ -6,32 +6,34 @@ namespace ControlFlowApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //Console.WriteLine("Hello, World!");
 
-            string grade = CheckGrade(65);
-            Console.WriteLine();
+            try
+            {
+                Console.WriteLine(CheckGrade(-20));
+                Console.WriteLine(CheckGrade(82));
+            }
+            catch(ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
-            Console.WriteLine(Priority(2));
+
+            //Console.WriteLine(Priority(2));
             
-            Console.WriteLine(DrivingLaw(17));
-            Console.WriteLine(DrivingLaw(20));
-            Console.WriteLine(DrivingLaw(25));
+            //Console.WriteLine(DrivingLaw(17));
+            //Console.WriteLine(DrivingLaw(20));
+            //Console.WriteLine(DrivingLaw(25));
 
-            LoopTypes.Loops();
+            //LoopTypes.Loops();
 
         }
 
         public static string CheckGrade(int score)
         {
-            if (score < 0)
+            if (score < 0 || score > 100)
             {
-                Console.WriteLine("Parameter must Be Positive");
-                throw new ArgumentOutOfRangeException("Invalid Parameters: Must be Positive");
-            }
-            else if (score > 100)
-            {
-                Console.WriteLine("Parameter Excedes Limit of 100");
-                throw new ArgumentOutOfRangeException("Invalid Parameters: Exceed Limit of 100");
+                throw new ArgumentOutOfRangeException("score:" + score + " Allowed Range 0-100");
             }
 
             // 0 - 100 

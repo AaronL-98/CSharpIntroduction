@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ControlFlowApp\ControlFlowApp.csproj" />
+    <ProjectReference Include="..\ExceptionsApp\ExceptionsApp.csproj" />
     <ProjectReference Include="..\OperatorsApp\OperatorsApp.csproj" />
   </ItemGroup>
 

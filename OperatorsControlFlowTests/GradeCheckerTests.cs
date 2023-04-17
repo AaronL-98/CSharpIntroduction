@@ -1,5 +1,4 @@
 ﻿using ControlFlowApp;
-using OperatorsApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +26,14 @@ namespace OperatorsControlFlowTests
                 Assert.Throws<ArgumentOutOfRangeException>(() => GradeChecker.CheckGrade(score));
 
             }
+        }
+
+        [TestCase(-12)] // Pass
+        [TestCase(101)] // Pass
+        public void WhenMarkLessThanZero_Grade_ThrowsArgumentOutOfRangeException(int mark)
+        {
+            Assert.That(() => GradeChecker.CheckGrade(mark), 
+                              Throws.TypeOf<ArgumentOutOfRangeException>().With.Message.Contain("Allowed Range 0-100"));
         }
 
     }
