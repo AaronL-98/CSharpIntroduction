@@ -3,6 +3,7 @@ using Op_CtrlFlow;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Op_CtrlFlow_Tests
 {
@@ -32,10 +33,25 @@ namespace Op_CtrlFlow_Tests
         }
 
         [Test]
-        public void WhenListIsEmpty_Average_ReturnsZero()
+        public void WhenListIsEmpty_Average_ThrowException()
         {
             var myList = new List<int>() {};
-            Assert.That(Exercises.Average(myList), Is.EqualTo(0));
+            Assert.Throws<ArgumentOutOfRangeException>(() => Exercises.Average(myList)).Message.Contains("List Empty");
+        }
+
+        [Test]
+        public void WhenListIsNull_Average_ReturnsThrowException()
+        {
+            var myList = new List<int>();
+            try
+            {
+                double i = Exercises.Average(myList);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Assert.Throws<ArgumentOutOfRangeException>(() => Exercises.Average(myList)).Message.Contains("Parameter was Null");
+
+            }
         }
 
         [TestCase(100, "OAP")]

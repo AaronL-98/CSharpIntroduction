@@ -16,7 +16,8 @@ namespace Op_CtrlFlow
         // returns the average of the array nums
         public static double Average(List<int> nums)
         {
-            return nums.Count() == 0 ? 0 : nums.Average();
+            if (nums != null) return nums.Count() == 0 ? throw new ArgumentOutOfRangeException("List Empty") : nums.Average();
+            throw new ArgumentNullException("Parameter was Null");
         }
 
         // returns the type of ticket a customer is eligible for based on their age
