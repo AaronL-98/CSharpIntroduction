@@ -2,6 +2,8 @@
 
 namespace MoreTypes_Lib
 {
+
+
     public class StringExercises
     {
         // manipulates and returns a string - see the unit test for requirements
