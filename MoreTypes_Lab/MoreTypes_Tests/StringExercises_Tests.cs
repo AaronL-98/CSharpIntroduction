@@ -33,6 +33,7 @@ namespace MoreTypes_Tests
         [Test]
         public void GivenAString_ParseNum_ReturnsTheDoubleRepresentedByTheString()
         {
+            //                                 parse the pie
             Assert.That(StringExercises.ParseNum("3.14159"), Is.EqualTo(3.14159));
         }
         [Test]
