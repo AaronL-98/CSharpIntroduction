@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 namespace MoreDataTypes
 {
@@ -6,12 +7,17 @@ namespace MoreDataTypes
     {
         static void Main(string[] args)
         {
-            var myString = "  C# list fundamentals  ";
-            Console.WriteLine(StringExercise(myString));
-            Console.WriteLine(StringBuilderExercise(myString));
-            StringInterpolation("Aaron");
-            ParsingStrings();
-
+            //--STRINGS--
+            //var myString = "  C# list fundamentals  ";
+            //Console.WriteLine(StringExercise(myString));
+            //Console.WriteLine(StringBuilderExercise(myString));
+            //StringInterpolation("Aaron");
+            //ParsingStrings();
+            
+            //--ARRAYS--
+            OneDArray();
+            MultiDArray();
+            JaggedArray();
         }
 
         public static string StringExercise(string myString)
@@ -73,6 +79,69 @@ namespace MoreDataTypes
             //{
             //    Console.WriteLine("must be and integer");
             //}
+        }
+
+        public static void OneDArray()
+        {
+            int[] myIntArray = { 12, 23, 34, 45, 56 };
+            Array.Reverse(myIntArray);
+            foreach (var i in myIntArray) 
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public static void MultiDArray()
+        {
+            int[,] grid = 
+            { 
+                { 12, 1 }, 
+                { 23, 2 }, 
+                { 34, 3 }, 
+                { 45, 4 }, 
+                { 56, 5 } 
+            };
+
+            Console.WriteLine("2D Grid written to console");
+            foreach (var i in grid)
+            {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("2D Grid written to console by row");
+            for (var i = grid.GetLowerBound(0); i <= grid.GetUpperBound(0); i++)
+            {
+                for (var j = grid.GetLowerBound(1); j <= grid.GetUpperBound(1); j++)
+                {
+                    Console.Write($"({i}, {j}) = {grid[i, j]}");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void JaggedArray()
+        {
+            int[][] jArray = new int[2][];
+            jArray[0] = new int[4];
+            jArray[1] = new int[2];
+
+            Console.WriteLine("Jagged Array written to console by row");
+            string[][] jArray2 = new string[][]
+            {
+                new string[] {"llama", "puma", "horse", "kitten"},
+                new string[] {"haddock", "tuna"}
+            };
+
+            foreach (var row in jArray2)
+            {
+                foreach (var entry in row)
+                {
+                    Console.Write($"{entry} ");
+                }
+                Console.WriteLine();
+            }
+
         }
 
     }
