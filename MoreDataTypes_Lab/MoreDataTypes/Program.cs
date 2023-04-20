@@ -5,6 +5,16 @@ namespace MoreDataTypes
 {
     public class Program
     {
+        public enum Suit
+        {
+            HEARTS, CLUBS, DIAMONDS, SPADES
+        }
+
+        public enum Size
+        {
+            Small = 10, Medium = 25, Large = 50
+        }
+
         static void Main(string[] args)
         {
             //--STRINGS--
@@ -13,11 +23,19 @@ namespace MoreDataTypes
             //Console.WriteLine(StringBuilderExercise(myString));
             //StringInterpolation("Aaron");
             //ParsingStrings();
-            
+
             //--ARRAYS--
-            OneDArray();
-            MultiDArray();
-            JaggedArray();
+            //OneDArray();
+            //MultiDArray();
+            //JaggedArray();
+
+            //--DateTimeEnums--
+            DateTimeMethods();
+            Enums(Suit.HEARTS);
+            Enums(Suit.SPADES);
+            Enums(Suit.CLUBS);
+            Enums(Suit.DIAMONDS);
+
         }
 
         public static string StringExercise(string myString)
@@ -144,5 +162,47 @@ namespace MoreDataTypes
 
         }
 
+        public static void DateTimeMethods()
+        {
+            var now = DateTime.Now;
+            Console.WriteLine($"The time now is {now}");
+            // Tick represents 100 nanoseconds - 0.0000001s
+            Console.WriteLine($"The time now is {now.Ticks}");
+            var tomorrow = now.AddDays(1);
+            Console.WriteLine($"Tomorrow will be {tomorrow} which is {tomorrow.Ticks} a change of {tomorrow.Ticks - now.Ticks}");
+            var sec = TimeSpan.FromSeconds(1);
+            var min = TimeSpan.FromMinutes(1);
+
+        }
+
+        public static void Enums(Suit theSuit)
+        {
+            
+            if (theSuit == Suit.SPADES) Console.WriteLine($"Suit is {theSuit}");
+            else Console.WriteLine($"Suite is {theSuit} and not {Suit.SPADES}");
+
+            switch (theSuit)
+            {
+                case Suit.HEARTS:
+                    Console.WriteLine("wahoo hearts");
+                    break;
+                case Suit.CLUBS:
+                    Console.WriteLine("go to the club");
+                    break;
+                case Suit.SPADES:
+                    Console.WriteLine("Diggy Diggy Hole");
+                    break;
+                default:
+                    Console.WriteLine($"{Suit.DIAMONDS} a plenty");
+                    break;
+            }
+
+            var mediumValue = (int)Size.Medium;
+            var mySize = (Size)50;
+            Console.WriteLine($"mediumValue = {mediumValue} and mySize = {mySize}");
+
+            var sizeLarge = (Size)Enum.Parse(typeof(Size), "Large");
+            Console.WriteLine($"{sizeLarge}");
+        }
     }
 }
