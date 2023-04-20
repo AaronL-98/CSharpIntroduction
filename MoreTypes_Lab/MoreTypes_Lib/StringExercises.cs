@@ -10,12 +10,12 @@ namespace MoreTypes_Lib
         // manipulates and returns a string - see the unit test for requirements
         public static string ManipulateString(string input, int num)
         {
-            input.Trim().ToUpper();
+            string output = input.Trim().ToUpper();
             for(int i = 0; i < num; i++)
             {
-                input += i;
+                output += i;
             }
-            return input;
+            return output;
         }
 
         // returns a formatted address string given its components
