@@ -13,11 +13,13 @@
 
 
             //--Tuples--
-            (string, string, int) myTuple = ("Joe", "McCann", 23);
-            Console.WriteLine(myTuple);
-            Console.WriteLine(myTuple.Item2);
+            //(string, string, int) myTuple = ("Joe", "McCann", 23);
+            //Console.WriteLine(myTuple);
+            //Console.WriteLine(myTuple.Item2);
+            //var weight = ConvertPoundsToStones(146);
+            //Console.WriteLine(weight);
 
-            var weight = ConvertPoundsToStones(146);
+
 
         }
         public static int DoThis(int x, string y = "happy")
@@ -25,7 +27,6 @@
             Console.WriteLine($"I'm feeling {y}");
             return x * x;
         }
-
         public static string OrderPizza( bool mushrooms, bool pineapple, bool chicken = false, bool peppers = false, string note = "")
         {
             var pizza = $"{note} Pizza with tomato sauce, cheese, ";
