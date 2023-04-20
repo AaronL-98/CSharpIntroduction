@@ -9,7 +9,6 @@ namespace MoreTypes_Lib
         public static string[] Make1DArray(List<string> contents)
         {
             return contents.ToArray();
-            //throw new NotImplementedException();
         }
 
         // returns a 3D array containing the contents of a given List
@@ -36,9 +35,7 @@ namespace MoreTypes_Lib
                     }
                 }
             }
-
             return output;
-            //throw new NotImplementedException();
         }
 
         // returns a jagged array containing the contents of a given List
@@ -57,7 +54,6 @@ namespace MoreTypes_Lib
 
             checked
             {
-
                 int l = 0;
                 for (int i = 0; i < countRowArray.Length; i++)
                 {
@@ -69,9 +65,7 @@ namespace MoreTypes_Lib
                     }
                 }
             }
-
             return output;
-            //throw new NotImplementedException();
         }
     }
 }
