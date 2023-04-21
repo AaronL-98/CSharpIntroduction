@@ -22,5 +22,25 @@ namespace Methods_Tests
             Assert.That(() => Methods.DaysAndWeeks(-1), Throws.TypeOf<ArgumentOutOfRangeException>()
         .With.Message.Contain("totalDays must not be negative"));
         }
+
+        [TestCase(4, 16, 64, 2.0)]
+        [TestCase(7, 49, 343, 2.6457513110645905905016157536393)]
+        public void GivenANumber_PowersRoot_ReturnsCorrectTuple(
+        int input, int expectedSquare, int expectedCube, double expectedRoot)
+        {
+            var answer = Methods.PowersRoot(input);
+            Assert.That(answer.squareInput, Is.EqualTo(expectedSquare));
+            Assert.That(answer.cubeInput,   Is.EqualTo(expectedCube));
+            Assert.That(answer.sqrtInput,   Is.EqualTo(expectedRoot));
+        }
+        [Test]
+        public void GivenANegativeNumber_PowersRoot_ThrowsAnException()
+        {
+            Assert.That(() => Methods.PowersRoot(-1), Throws.TypeOf<ArgumentOutOfRangeException>()
+        .With.Message.Contain("Can't sqaure root a negative number"));
+        }
+
+
     }
+
 }
