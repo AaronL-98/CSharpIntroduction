@@ -29,9 +29,9 @@ namespace Methods_Tests
         int input, int expectedSquare, int expectedCube, double expectedRoot)
         {
             var answer = Methods.PowersRoot(input);
-            Assert.That(answer.squareInput, Is.EqualTo(expectedSquare));
-            Assert.That(answer.cubeInput,   Is.EqualTo(expectedCube));
-            Assert.That(answer.sqrtInput,   Is.EqualTo(expectedRoot));
+            Assert.That(answer.squareInput, Is.EqualTo(expectedSquare), "Incorrect Square");
+            Assert.That(answer.cubeInput,   Is.EqualTo(expectedCube), "Incorrect Cube");
+            Assert.That(answer.sqrtInput,   Is.EqualTo(expectedRoot), "Incorrect Root");
         }
         [Test]
         public void GivenANegativeNumber_PowersRoot_ThrowsAnException()

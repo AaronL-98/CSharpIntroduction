@@ -9,7 +9,6 @@ namespace Methods_Lib
         public static (int weeks, int days) DaysAndWeeks(int totalDays)
         {
             return (totalDays < 0) ? throw new ArgumentOutOfRangeException("totalDays must not be negative") : ((totalDays / 7), (totalDays % 7));
-
         }
 
         public static int RollDice(Random rng)
@@ -26,11 +25,8 @@ namespace Methods_Lib
             checked
             {
                 int squareInput = input * input;
-
                 int cubeInput = (int)Math.Pow(input, 3);
-
                 double sqrtInput = Math.Sqrt(input);
-                
                 return (squareInput, cubeInput, sqrtInput);
             }
         }
